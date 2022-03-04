@@ -1,23 +1,44 @@
-import logo from './logo.svg';
 import './App.css';
+import {Route,Routes,Link}  from 'react-router-dom';
+import {Layout, Typography,Space} from 'antd';
+import {Navbar,AboutUs,Homepage,Cryptocurrencies,News,CrytpoDetails} from './components/Importer'
+
 
 function App() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <div className="navbar">
+       <Navbar/>
+      </div>
+
+      <div className="main">
+     <Layout>
+       <div className ="routes">
+         <Routes>
+           <Route exact path = "/" element= { <Homepage/>}/>            
+           <Route exact path = "/cryptocurrencies" element = {<Cryptocurrencies/>}/>
+           <Route exact path = "/crypto/:coinId" element = { <CrytpoDetails/>}/>
+           <Route exact path = "/news" element = {<News/>}/>
+           <Route exact path = "/AboutUs" element = {<AboutUs/>}/>
+
+         </Routes>
+       </div>
+     </Layout>
+      <div className="footer">
+        <Typography.Title level ={5} style={{color: "white",textAlign:'center'}}>
+          CoinsUniverse | All rights reserved <br />
+          Developed and Maintained by <a href="https://www.linkedin.com/in/paras-kumar-sharma-2494781b3/">Paras Kumar Sharma</a>
+        </Typography.Title>
+        <Space>
+          <Link to='/'>Home</Link>
+          <Link to='/cryptocurrencies'>Cryptocurrencies</Link>
+          <Link to='/news'>News</Link>
+          <Link to='/AboutUs'>About Us</Link>
+
+        </Space>
+      </div>
+      </div>
     </div>
   );
 }

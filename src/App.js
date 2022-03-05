@@ -20,7 +20,7 @@ function App() {
            <Route exact path = "/cryptocurrencies" element = {<Cryptocurrencies/>}/>
            <Route exact path = "/crypto/:coinId" element = { <CrytpoDetails/>}/>
            <Route exact path = "/news" element = {<News/>}/>
-           <Route exact path = "/AboutUs" element = {<AboutUs/>}/>
+           <Route exact path = "/Aboutus" element = {<AboutUs/>}/>
 
          </Routes>
        </div>
@@ -30,12 +30,11 @@ function App() {
           CoinsUniverse | All rights reserved <br />
           Developed and Maintained by <a href="https://www.linkedin.com/in/paras-kumar-sharma-2494781b3/">Paras Kumar Sharma</a>
         </Typography.Title>
-        <Space>
+        <Space style={{color:"white"}}>
           <Link to='/'>Home</Link>
           <Link to='/cryptocurrencies'>Cryptocurrencies</Link>
           <Link to='/news'>News</Link>
-          <Link to='/AboutUs'>About Us</Link>
-
+          <Link to='/Aboutus'>About me</Link>
         </Space>
       </div>
       </div>
